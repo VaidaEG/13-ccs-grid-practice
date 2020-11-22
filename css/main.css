@@ -1,0 +1,10 @@
+body > * {
+    border: 2px solid black;
+}
+        img {
+            border: 2px solid black;
+        }
+        .first-row, .second-row, .third-row, .container1, .container2 {
+            border: 2px solid black; 
+            height: 50px;
+        }
