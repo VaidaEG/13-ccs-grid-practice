@@ -1,5 +1,6 @@
 body > * {
     border: 2px solid black;
+    text-align: center;
 }
         img {
             border: 2px solid black;
@@ -8,3 +9,81 @@ body > * {
             border: 2px solid black; 
             height: 50px;
         }
+body {
+    display: grid;
+    grid-template-columns: 1fr 30px 40px 300px 30px 1fr;
+    /* grid-template-rows: 40px 20px 80px 20px 150px 20px 60px 130px 60px 60px; */
+    grid-template-areas:
+    ". header header header header ."
+    ". hero hero hero hero ."
+    ". services services services services ."
+    ". . fr fr . ."
+    ". . sr sr . ."
+    ". . tr tr . ."
+    ". freelance freelance freelance freelance ."
+    ". testimonials testimonials testimonials testimonials ."
+    ". . container1 container1 . ."
+    ". . container2 container2 . ."
+    ". footer footer footer footer ."
+    ". nav nav nav nav .";
+}
+    header {
+        width: 100%;
+        grid-area: header;
+    }
+        img {
+            width: 100%;
+            grid-area: img;
+        }
+    .hero {
+        width: 100%;
+        grid-area: hero;
+    }
+    .services {
+        width: 100%;
+        grid-area: services;
+    }
+        .first-row {
+            width: 340px;
+            margin: 40px auto;
+            grid-area: fr;
+        }
+        .second-row {
+            width: 340px;
+            margin: auto;
+            margin-bottom: 40px;
+            grid-area: sr;
+        }
+        .third-row {
+            width: 340px;
+            margin: auto;
+            margin-bottom: 40px;
+            grid-area: tr;
+        }
+    .freelance {
+        width: 100%;
+        grid-area: freelance;
+    }
+    .testimonials {
+        width: 100%;
+        grid-area: testimonials
+    }
+        .container1 {
+            width: 340px;
+            margin: 40px auto;
+            grid-area: container1;
+        }
+        .container2 {
+            width: 340px;
+            margin: auto;
+            margin-bottom: 40px;
+            grid-area: container2;
+        }
+    footer {
+        width: 100%;
+        grid-area: footer;
+    }
+    .nav {
+        width: 100%;
+        grid-area: nav;
+    }
