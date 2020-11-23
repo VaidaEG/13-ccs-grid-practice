@@ -9,81 +9,104 @@ body > * {
             border: 2px solid black; 
             height: 50px;
         }
-body {
-    display: grid;
-    grid-template-columns: 1fr 30px 40px 300px 30px 1fr;
-    /* grid-template-rows: 40px 20px 80px 20px 150px 20px 60px 130px 60px 60px; */
-    grid-template-areas:
-    ". header header header header ."
-    ". hero hero hero hero ."
-    ". services services services services ."
-    ". . fr fr . ."
-    ". . sr sr . ."
-    ". . tr tr . ."
-    ". freelance freelance freelance freelance ."
-    ". testimonials testimonials testimonials testimonials ."
-    ". . container1 container1 . ."
-    ". . container2 container2 . ."
-    ". footer footer footer footer ."
-    ". nav nav nav nav .";
-}
-    header {
-        width: 100%;
-        grid-area: header;
+@media (max-width: 480px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 440 1fr;
+        grid-template-areas:
+        ". header ."
+        ". hero ."
+        ". services ."
+        ". freelance ."
+        ". testimonials ."
+        ". footer ."
+        ". nav .";
+        row-gap: 20px;
     }
-        img {
+        header {
             width: 100%;
-            grid-area: img;
+            grid-area: header;
+            display: grid;
+            grid-template-columns: 1fr 40px 270px 1fr;
+            grid-template-areas:
+            ". img hh ."
         }
-    .hero {
-        width: 100%;
-        grid-area: hero;
-    }
-    .services {
-        width: 100%;
-        grid-area: services;
-    }
-        .first-row {
-            width: 340px;
-            margin: 40px auto;
-            grid-area: fr;
+            .hh {
+                grid-area: hh;
+            }
+            img {
+                width: 100%;
+                float: left;
+                grid-area: img;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        .hero {
+            width: 100%;
+            grid-area: hero;
         }
-        .second-row {
-            width: 340px;
-            margin: auto;
-            margin-bottom: 40px;
-            grid-area: sr;
+        .services {
+            width: 100%;
+            grid-area: services;
+            display: grid;
+            grid-template-columns: 1fr 300px 1fr;
+            grid-template-areas:
+            "hs hs hs"
+            ". fr ."
+            ". sr ."
+            ". tr .";
+            row-gap: 20px;
         }
-        .third-row {
-            width: 340px;
-            margin: auto;
-            margin-bottom: 40px;
-            grid-area: tr;
+            .hs {
+                grid-area: hs;
+            }
+            .first-row {
+                width: 100%;
+                grid-area: fr;
+            }
+            .second-row {
+                width: 100%;
+                grid-area: sr;
+            }
+            .third-row {
+                width: 100%;
+                grid-area: tr;
+                margin-bottom: 20px;
+            }
+        .freelance {
+            width: 100%;
+            grid-area: freelance;
         }
-    .freelance {
-        width: 100%;
-        grid-area: freelance;
-    }
-    .testimonials {
-        width: 100%;
-        grid-area: testimonials
-    }
-        .container1 {
-            width: 340px;
-            margin: 40px auto;
-            grid-area: container1;
+        .testimonials {
+            width: 100%;
+            grid-area: testimonials;
+            display: grid;
+            grid-template-columns: 1fr 300px 1fr;
+            grid-template-areas:
+            ". ht ."
+            ". container1 ."
+            ". container2 .";
+            row-gap: 20px;
+            
         }
-        .container2 {
-            width: 340px;
-            margin: auto;
-            margin-bottom: 40px;
-            grid-area: container2;
+            .ht {
+                grid-area: ht;
+            }
+            .container1 {
+                width: 100%;
+                grid-area: container1;
+            }
+            .container2 {
+                width: 100%;
+                grid-area: container2;
+                margin-bottom: 20px;
+            }
+        footer {
+            width: 100%;
+            grid-area: footer;
         }
-    footer {
-        width: 100%;
-        grid-area: footer;
-    }
-    .nav {
-        width: 100%;
-        grid-area: nav;
-    }
+        .nav {
+            width: 100%;
+            grid-area: nav;
+        }  
+}
